@@ -1,0 +1,39 @@
+<div class="all">
+        <div *ngIf="allCard.length==0">
+                <p class="alert alert-primary"> there is no Foods<p>
+             </div>
+    <table class="table table-hover" *ngIf="allCard.length!=0">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Total</th>
+            <th scope="col">Option</th>
+            <th scope="col">Buy</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let good of allCard; index as i">
+            <th scope="row">{{i+1}}</th>
+            <td>{{good.name}}</td>
+            <td>{{good.price | currency}}</td>
+            <td>
+                <input type="number" #amount2 [(ngModel)]="good.amount" class="form-control" placeholder="Amount">
+            </td>
+            <td>{{(good.price * good.amount | currency)}}</td>
+            <td>
+                <button class="btn btn-primary" (click)="save(i)">Save</button>
+                <button class="btn btn-danger" (click)="delete(i)">Delete</button>
+            </td>
+            <td>
+                <button class="btn btn-primary" (click)="onBuyClick(good.price , amount2.value)">Add To Card</button>
+            </td>
+          </tr>
+          
+        </tbody>
+        <h2>total price: {{orderTotalPrice}}</h2>
+      </table>
+      
+</div>

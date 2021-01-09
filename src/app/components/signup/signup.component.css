@@ -1,0 +1,14 @@
+.all {
+    margin-top: 65px;
+}
+input {
+    margin-top: 30px;
+}
+button {
+    margin:auto;
+    text-align: center;
+    margin-top: 30px;
+}
+.errorSign {
+    color: red;
+}

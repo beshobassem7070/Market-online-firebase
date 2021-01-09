@@ -1,0 +1,8 @@
+<app-navbar></app-navbar>
+
+<div class="per">
+  <div class="routerCont" [@router]="myOutlet.activatedRouteData['index']">
+    <router-outlet #myOutlet="outlet"></router-outlet>
+  </div>
+</div>
+<!-- <app-footer></app-footer> -->
